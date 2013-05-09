@@ -122,6 +122,68 @@ if(!global.android){
 	view_year.add(lbl_year);
 	view_year.add(txt_year);
 	
+	var view_name = Ti.UI.createView({
+		layout: 'horizontal',
+		height: Ti.UI.SIZE,
+		width: Ti.UI.FILL,
+		top:10,
+	});
+
+	var lbl_name = Ti.UI.createLabel({
+		color: global.colors.dark,
+		left: '5%',
+		text:"Name  ",
+		font:{
+            fontFamily:'Helvetica Neue',
+            fontSize:20,
+            fontWeight:'Bold'
+           }
+	});	
+
+	var txt_name = Ti.UI.createTextField({
+		left: '5%',
+		right: '5%',
+		font:{
+            fontFamily:'Helvetica Neue', fontSize: 18
+           },  
+		hintText:' i.e. Pedestal',
+		borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED
+	});
+	
+	view_name.add(lbl_name);
+	view_name.add(txt_name);
+	
+	var view_location = Ti.UI.createView({
+		layout: 'horizontal',
+		height: Ti.UI.SIZE,
+		width: Ti.UI.FILL,
+		top:10,
+	});
+
+	var lbl_location = Ti.UI.createLabel({
+		color: global.colors.dark,
+		left: '5%',
+		text:'Location',
+		font:{
+            fontFamily:'Helvetica Neue',
+            fontSize:20,
+            fontWeight:'Bold'
+           }
+	});	
+
+	var txt_location = Ti.UI.createTextField({
+		left: '5%',
+		right: '5%',
+		font:{
+            fontFamily:'Helvetica Neue', fontSize: 18
+           },  
+		hintText:' i.e. Napa Valley',
+		borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED
+	});
+	
+	view_location.add(lbl_location);
+	view_location.add(txt_location);	
+	
 	var textArea = Ti.UI.createTextArea({
 		borderRadius: 5,
 		left: '5%',
@@ -139,6 +201,8 @@ if(!global.android){
 	view_scroll.add(select_bar);
 	view_scroll.add(view_variety);
 	view_scroll.add(view_year);
+	view_scroll.add(view_name);
+	view_scroll.add(view_location);
 	view_scroll.add(textArea);
 	//view_scroll.add(image_wine);
 	
