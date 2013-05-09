@@ -279,7 +279,7 @@ function DiscoverWindow(title) {
 							var wr = wine_review(wine);
 							wr.containingTab = self.containingTab;
 							self.containingTab.open(wr);
-						}, true);
+						});
 						view.add(table);
 						table.addEventListener('refresh_page_data', function(){
 							load_data();
@@ -294,7 +294,7 @@ function DiscoverWindow(title) {
 							var wr = wine_review(wine);
 				wr.containingTab = self.containingTab;
 				self.containingTab.open(wr);
-						}, true); 
+						}); 
 						view.add(table);
 						table.addEventListener('refresh_page_data', function(){
 							load_data();
@@ -309,7 +309,7 @@ function DiscoverWindow(title) {
 							var wr = wine_review(wine);
 				wr.containingTab = self.containingTab;
 				self.containingTab.open(wr);
-						}, true);
+						});
 						view.add(table);
 						table.addEventListener('refresh_page_data', function(){
 							load_data();
@@ -324,7 +324,7 @@ function DiscoverWindow(title) {
 							var wr = wine_review(wine);
 				wr.containingTab = self.containingTab;
 				self.containingTab.open(wr);
-						}, true);
+						});
 						view.add(table);
 						table.addEventListener('refresh_page_data', function(){
 							load_data();
@@ -347,7 +347,7 @@ function DiscoverWindow(title) {
 							var wr = wine_review(wine);
 							wr.containingTab = self.containingTab;
 							self.containingTab.open(wr);
-						}, true);
+						});
 							view.add(table);
 						table.addEventListener('refresh_page_data', function(){
 							load_data();
@@ -362,7 +362,7 @@ function DiscoverWindow(title) {
 							var wr = wine_review(wine);
 							wr.containingTab = self.containingTab;
 							self.containingTab.open(wr);
-						}, true); 
+						}); 
 						view.add(table);
 						table.addEventListener('refresh_page_data', function(){
 							load_data();
@@ -377,7 +377,7 @@ function DiscoverWindow(title) {
 							var wr = wine_review(wine);
 							wr.containingTab = self.containingTab;
 							self.containingTab.open(wr);
-						}, true);
+						});
 						view.add(table);
 						table.addEventListener('refresh_page_data', function(){
 							load_data();

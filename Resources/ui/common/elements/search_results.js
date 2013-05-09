@@ -1,4 +1,4 @@
-module.exports = function(result, callback, addwine){
+module.exports = function(result, callback, addwine, win){
 	Ti.API.info("loading search results: ");
 	var global = require('ui/common/globals');
 			
@@ -39,7 +39,7 @@ module.exports = function(result, callback, addwine){
 		} // for loop ends
 	}; // outer if statement ends
 
-/*
+
 	// Add Wine row to bottom of list
 	if(addwine == true){ // if statement begins			
 		var row_block = Ti.UI.createView({
@@ -54,6 +54,7 @@ module.exports = function(result, callback, addwine){
 			
 		var lbl_addwine = Ti.UI.createLabel({
 			color:'black',
+			textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
 			text: "Don't see the wine you were looking for?\nAdd it to our database",
 			font:{fontSize:20,fontWeight:'normal',fontFamily:'Helvetica Neue'},
 			touchEnabled:false
@@ -65,10 +66,14 @@ module.exports = function(result, callback, addwine){
 		table.add(row_block);
 			
 		row_block.addEventListener('click', function(e){
-			alert('add wine clicked');  // load add wine page
+			//alert('add wine clicked');  // load add wine page
+			var addwine = require('ui/handheld/AddWineWindow');
+			var aw = addwine();
+			aw.containingTab = table.containingTab;
+			win.containingTab.open(aw);
 		});	
 	}; // if statement ends
-*/
+
 	
 	/**********************************************************
 	 * 
@@ -76,7 +81,7 @@ module.exports = function(result, callback, addwine){
 	 * the Wine Life icon and name on top of page.
 	 * 
 	 **********************************************************/
-	
+	/*
 	if(pl.length < 1 || !pl[0].friend){
 		var add_wine = Ti.UI.createView({
 			width: Titanium.Platform.displayCaps.platformWidth - 20,
@@ -101,15 +106,16 @@ module.exports = function(result, callback, addwine){
 		add_wine.addEventListener('click', function(){
 			var ew = edit_wine();
 			ew.containingTab = table.containingTab;
-			
+			//wr.containingTab = self.containingTab;
+				win.containingTab.open(ew);
 			//ew.containingTab;
 			//ew = table.containingTab;
 						
-			ew.open();
+		//	ew.open();
 			//table.containingTab.open(ew);
 		});
 	}; // if statement ends here when 0 results from a search.
-	
+	*/
 	var table_view = Ti.UI.createView({
 		height: Ti.UI.SIZE,
 		width: Ti.UI.SIZE

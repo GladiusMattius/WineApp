@@ -10,11 +10,21 @@
 module.exports = function(){
 	var global = require('ui/common/globals');
 	var make_row = require('ui/common/elements/search_results/make_row');
-	var win2 = global.createWindow('Edit Wine');
+	var win2 = global.createWindow();
 
 	if(!global.android)
 		win2.barImage = 'images/iPhone_Nav_Bar_Bkgrd_With_Black.png';
-	win2.barImage='images/iPhone_Nav_Bar_Bkgrd_With_Black.png';
+	//win2.barImage='images/iPhone_Nav_Bar_Bkgrd_With_Black.png';
+
+if(!global.android){
+		var back = Ti.UI.createButton({ title: "Back" });
+	 	back.addEventListener("click", function() 
+		{
+	 		win2.close({animated:true});
+		});
+		win2.setLeftNavButton(back);
+	}
+
 
 	// Create view 2
 	var view2 = Ti.UI.createView();
@@ -153,6 +163,6 @@ module.exports = function(){
 
 	win2.add(view2);
 
-	global.outputHook(win2);
+//	global.outputHook(win2);
 	return win2;
 };
