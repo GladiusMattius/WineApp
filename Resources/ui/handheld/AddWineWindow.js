@@ -39,8 +39,9 @@ if(!global.android){
 		text:"Add Wine",
 		font:{
             fontFamily:'Helvetica Neue',
-            fontSize:18,
-            fontWeight:'Italic'
+            fontSize:22,
+            fontWeight:'Bold',
+            fontStyle:'italic',
            }
 	});
 	
@@ -62,13 +63,33 @@ if(!global.android){
 		borderRadius: 10,
 	});
 	
-	var picker_allwines = TU.UI.createSimplePicker ({
+	var view_variety = Ti.UI.createView({
+		layout: 'horizontal',
+		height: Ti.UI.SIZE,
+		width: Ti.UI.FILL,
 		top:10,
+	});
+
+	var lbl_variety = Ti.UI.createLabel({
+		color: global.colors.dark,
+		left: '5%',
+		text:"Variety",
+		font:{
+            fontFamily:'Helvetica Neue',
+            fontSize:20,
+            fontWeight:'Bold'
+           }
+	});		
+	
+	var picker_variety = TU.UI.createSimplePicker ({
 		left: '5%',
 		right: '5%',
 		title: "Type",
 		values: allwines 
 	});
+	
+	view_variety.add(lbl_variety);
+	view_variety.add(picker_variety);
 	
 	var view_year = Ti.UI.createView({
 		layout: 'horizontal',
@@ -79,9 +100,8 @@ if(!global.android){
 
 	var lbl_year = Ti.UI.createLabel({
 		color: global.colors.dark,
-		//bottom: 10,
 		left: '5%',
-		text:"Year",
+		text:"Year    ",
 		font:{
             fontFamily:'Helvetica Neue',
             fontSize:20,
@@ -93,7 +113,7 @@ if(!global.android){
 		left: '5%',
 		right: '5%',
 		font:{
-            fontFamily:'Helvetica Neue', fontSize: 16
+            fontFamily:'Helvetica Neue', fontSize: 18
            },  
 		hintText:' i.e. 1996',
 		borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED
@@ -117,7 +137,7 @@ if(!global.android){
 
 	view_scroll.add(lbl_title);
 	view_scroll.add(select_bar);
-	view_scroll.add(picker_allwines);
+	view_scroll.add(view_variety);
 	view_scroll.add(view_year);
 	view_scroll.add(textArea);
 	//view_scroll.add(image_wine);
